@@ -232,6 +232,8 @@ if [ -e $CACHE_DIR/.cabal-sandbox ]; then
 fi
 
 echo "-----> Getting newest list of cabal packages"
+ping www.google.com
+ping hackage.haskell.org
 cabal update
 
 echo "-----> Installing user application"
