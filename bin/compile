@@ -232,9 +232,9 @@ if [ -e $CACHE_DIR/.cabal-sandbox ]; then
 fi
 
 echo "-----> Getting newest list of cabal packages"
-ping www.google.com
-ping hackage.haskell.org
-cabal update
+ping -c 2 www.google.com
+ping -c 2 hackage.haskell.org
+cabal update --verbose
 
 echo "-----> Installing user application"
 cabal configure --disable-library-profiling --disable-executable-profiling --disable-tests --disable-library-coverage --disable-benchmarks --enable-executable-stripping --disable-split-objs || true
